@@ -1,0 +1,145 @@
+{
+  "name": "Fat Tiger - Citadel Mall Indore",
+  "tagline": "Momos, Burgers & More",
+  "location": "Citadel Mall, Indore",
+  "accent": "#F59E0B",
+  "currency": "₹",
+  "categories": [
+    {
+      "name": "Juicy Steamed Momos",
+      "note": "Serving: 8 pcs | Extra: Deep Fried (+₹30)",
+      "items": [
+        { "name": "Masala Soya Momos", "price": 149, "veg": true, "spicy": 0 },
+        { "name": "Veg Momos", "price": 169, "veg": true, "spicy": 0 },
+        { "name": "Darjeeling Wheat Veg", "price": 169, "veg": true, "spicy": 0 },
+        { "name": "Paneer Momos", "price": 189, "veg": true, "spicy": 0 },
+        { "name": "Corn & Cheese Momos", "price": 189, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Gravy Momos",
+      "note": "Serving: 6 pcs",
+      "items": [
+        { "name": "Italian Veg", "price": 179, "veg": true, "spicy": 0 },
+        { "name": "Smoky Gravy", "price": 189, "veg": true, "spicy": 1 },
+        { "name": "Kung Pao", "price": 199, "veg": true, "spicy": 1 },
+        { "name": "Pizza Style", "price": 199, "veg": true, "spicy": 0 },
+        { "name": "Mint N Cheesy", "price": 199, "veg": true, "spicy": 0 },
+        { "name": "Peri-Peri", "price": 229, "veg": true, "spicy": 2 }
+      ]
+    },
+    {
+      "name": "Pan Fried Momos",
+      "note": "Serving: 8 pcs",
+      "items": [
+        { "name": "Masala Soya Veg", "price": 169, "veg": true, "spicy": 0 },
+        { "name": "Veg Momos", "price": 189, "veg": true, "spicy": 0 },
+        { "name": "Darjeeling Wheat Veg", "price": 189, "veg": true, "spicy": 0 },
+        { "name": "Paneer Momos", "price": 209, "veg": true, "spicy": 0 },
+        { "name": "Corn & Cheese Momos", "price": 209, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Dessert Momos",
+      "note": "Serving: 4 pcs",
+      "items": [
+        { "name": "Dessert Momos", "price": 149, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Smoky Momos",
+      "note": "Serving: 6 pcs",
+      "items": [
+        { "name": "Masala Soya", "price": 169, "veg": true, "spicy": 0 },
+        { "name": "Smoky Paneer", "price": 189, "veg": true, "spicy": 1 },
+        { "name": "Smoky Veggie", "price": 189, "veg": true, "spicy": 1 },
+        { "name": "Darjeeling Wheat Veg", "price": 189, "veg": true, "spicy": 0 },
+        { "name": "Corn N Cheese", "price": 209, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Momos Platter",
+      "note": "Serving: 6 pcs",
+      "items": [
+        { "name": "Veg Platter", "price": 329, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Crispy Fried Momos",
+      "note": "Serving: 6 pcs",
+      "items": [
+        { "name": "Masala Soya", "price": 199, "veg": true, "spicy": 0 },
+        { "name": "Exotic Veggie", "price": 219, "veg": true, "spicy": 0 },
+        { "name": "Juicy Paneer", "price": 239, "veg": true, "spicy": 0 },
+        { "name": "Corn & Cheese", "price": 239, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Big Momo",
+      "note": "Serving: 4 pcs",
+      "items": [
+        { "name": "Baozi Veg", "price": 189, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Crazy Burgers",
+      "items": [
+        { "name": "Aloo Tikki", "price": 79, "veg": true, "spicy": 0 },
+        { "name": "Greenie Veggie", "price": 99, "veg": true, "spicy": 0 },
+        { "name": "Aloo Tikki Bomb Burger", "price": 99, "veg": true, "spicy": 1 },
+        { "name": "Jalapeno Veggie", "price": 109, "veg": true, "spicy": 1 },
+        { "name": "Paneer Burger", "price": 149, "veg": true, "spicy": 0 },
+        { "name": "Paneer Spicy", "price": 169, "veg": true, "spicy": 2 },
+        { "name": "Tiger Big Fat Veg Burger", "price": 209, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Loaded Pizza",
+      "items": [
+        { "name": "Margherita", "half": 149, "full": 249, "veg": true, "spicy": 0 },
+        { "name": "Cheese N Tomato", "half": 149, "full": 299, "veg": true, "spicy": 0 },
+        { "name": "Cheese & Chilli", "half": 159, "full": 299, "veg": true, "spicy": 1 },
+        { "name": "Mediterranean", "half": 179, "full": 369, "veg": true, "spicy": 0 },
+        { "name": "Special Veg", "half": 199, "full": 349, "veg": true, "spicy": 0 },
+        { "name": "Cheese N Mushroom", "half": 219, "full": 369, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Loaded Fries",
+      "note": "Extra: Make It Large (+₹10)",
+      "items": [
+        { "name": "French Fries", "price": 89, "veg": true, "spicy": 0 },
+        { "name": "Peri Peri Fries", "price": 99, "veg": true, "spicy": 1 },
+        { "name": "Cheesy Fries", "price": 139, "veg": true, "spicy": 0 },
+        { "name": "Cheesy Jalapeno", "price": 149, "veg": true, "spicy": 1 }
+      ]
+    },
+    {
+      "name": "Tiger's All Time Favourite",
+      "note": "Extra: Make It Large (+₹10)",
+      "items": [
+        { "name": "Bun Maska", "price": 49, "veg": true, "spicy": 0 },
+        { "name": "Pizza Pockets", "serving": "5 pcs", "price": 159, "veg": true, "spicy": 0 },
+        { "name": "Jalapeno Tortilla Wrap", "price": 149, "veg": true, "spicy": 1 },
+        { "name": "Jalapeno Shots", "serving": "12 pcs", "price": 169, "veg": true, "spicy": 1 },
+        { "name": "Paneer Tortilla Wrap", "price": 169, "veg": true, "spicy": 0 },
+        { "name": "Kung Pao Rice Bowl", "price": 219, "veg": true, "spicy": 1 },
+        { "name": "Veg Pasta (W/R)", "price": 229, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Sandwich",
+      "items": [
+        { "name": "Jalapeno Grilled Sandwich", "price": 179, "veg": true, "spicy": 1 },
+        { "name": "Paneer Sandwich", "price": 189, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Make A Meal",
+      "items": [
+        { "name": "Medium Fries + Medium Coke", "price": 139, "veg": true, "spicy": 0 },
+        { "name": "Large Fries + Large Coke", "price": 159, "veg": true, "spicy": 0 }
+      ]
+    }
+  ]
+}

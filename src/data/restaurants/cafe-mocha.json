@@ -1,0 +1,76 @@
+{
+  "name": "Cafe Mocha",
+  "tagline": "Coffee, Bakes & Slow Mornings",
+  "location": "AB Road, Indore",
+  "accent": "#7A5A3A",
+  "currency": "₹",
+  "categories": [
+    {
+      "name": "Coffee",
+      "items": [
+        {
+          "name": "Cafe Latte",
+          "description": "Double espresso, steamed milk, micro-foam",
+          "price": 179,
+          "veg": true,
+          "spicy": 0,
+          "tag": "Bestseller"
+        },
+        {
+          "name": "Cold Brew",
+          "description": "18-hour slow steeped, served over ice",
+          "price": 199,
+          "veg": true,
+          "spicy": 0
+        },
+        {
+          "name": "Hazelnut Cappuccino",
+          "description": "House hazelnut syrup, cinnamon dust",
+          "price": 209,
+          "veg": true,
+          "spicy": 0
+        }
+      ]
+    },
+    {
+      "name": "All-Day Breakfast",
+      "items": [
+        {
+          "name": "Avocado Toast",
+          "description": "Sourdough, smashed avocado, chilli flakes, feta",
+          "price": 259,
+          "veg": true,
+          "spicy": 1
+        },
+        {
+          "name": "Classic Eggs Benedict",
+          "description": "Poached eggs, hollandaise, toasted muffin",
+          "price": 289,
+          "veg": false,
+          "spicy": 0,
+          "tag": "Chef's Special"
+        }
+      ]
+    },
+    {
+      "name": "Bakes",
+      "items": [
+        {
+          "name": "Belgian Chocolate Brownie",
+          "description": "Dense, fudgy, served warm",
+          "price": 149,
+          "veg": true,
+          "spicy": 0
+        },
+        {
+          "name": "Blueberry Cheesecake",
+          "description": "Baked cheesecake, fresh blueberry compote",
+          "price": 189,
+          "veg": true,
+          "spicy": 0,
+          "tag": "New"
+        }
+      ]
+    }
+  ]
+}

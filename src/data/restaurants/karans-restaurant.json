@@ -1,0 +1,167 @@
+{
+  "name": "Karan's Restaurant",
+  "tagline": "Delicious Multi-Cuisine Dining",
+  "location": "City Center",
+  "accent": "#E63946",
+  "currency": "₹",
+  "categories": [
+    {
+      "name": "Chicken",
+      "items": [
+        { "name": "Chilly Chicken", "half": 270, "full": 430, "veg": false, "spicy": 2 },
+        { "name": "Garlic Chicken", "half": 270, "full": 380, "veg": false, "spicy": 1 },
+        { "name": "Chicken Pakoda", "half": 250, "full": 380, "veg": false, "spicy": 0 },
+        { "name": "Crispy Chicken", "half": 240, "full": 390, "veg": false, "spicy": 1 }
+      ],
+      "extras": [
+        { "name": "Boneless Chicken Extra Charges", "price": 40 }
+      ]
+    },
+    {
+      "name": "Chicken Burgers",
+      "items": [
+        { "name": "Chicken Burger", "price": 60, "veg": false, "spicy": 0 },
+        { "name": "Chicken Patty Burger", "price": 80, "veg": false, "spicy": 0 },
+        { "name": "Chicken Double Patty Burger", "price": 130, "veg": false, "spicy": 1 }
+      ]
+    },
+    {
+      "name": "Chicken Wraps",
+      "items": [
+        { "name": "Chicken Wrap", "price": 100, "veg": false, "spicy": 0 },
+        { "name": "Chicken Patty Wrap", "price": 120, "veg": false, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Pappad",
+      "items": [
+        { "name": "Pappad Dry / Fry", "price": 20, "veg": true, "spicy": 0 },
+        { "name": "Pappad Masala", "price": 90, "veg": true, "spicy": 1 },
+        { "name": "Peanut Pappad", "price": 100, "veg": true, "spicy": 0 },
+        { "name": "Peanut Masala", "price": 80, "veg": true, "spicy": 1 }
+      ]
+    },
+    {
+      "name": "Raita",
+      "items": [
+        { "name": "Plain Raita", "price": 70, "veg": true, "spicy": 0 },
+        { "name": "Aloo Raita", "price": 80, "veg": true, "spicy": 0 },
+        { "name": "Mix Raita", "price": 90, "veg": true, "spicy": 0 },
+        { "name": "Boondi Raita", "price": 80, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Veg Tandoor Se",
+      "items": [
+        { "name": "Mushroom Double Taker", "serving": "8 Pc.", "price": 200, "veg": true, "spicy": 0 },
+        { "name": "Chana Masala", "price": 180, "veg": true, "spicy": 1 },
+        { "name": "Palak Corn", "price": 200, "veg": true, "spicy": 0 },
+        { "name": "Malai Kofta", "price": 240, "veg": true, "spicy": 0 },
+        { "name": "Palak Paneer", "price": 240, "veg": true, "spicy": 0 },
+        { "name": "Palak Kofta", "price": 180, "veg": true, "spicy": 0 },
+        { "name": "Paneer Do Payaza", "price": 230, "veg": true, "spicy": 1 },
+        { "name": "Mushroom Do Payaza", "price": 200, "veg": true, "spicy": 1 },
+        { "name": "Paneer Lababdar", "price": 280, "veg": true, "spicy": 1 },
+        { "name": "Malai Chap", "price": 200, "veg": true, "spicy": 0 },
+        { "name": "Gravy Chap", "price": 240, "veg": true, "spicy": 1 },
+        { "name": "Veg Cutlet Potato Finger", "price": 200, "veg": true, "spicy": 0 },
+        { "name": "Cheese Cutlet Potato Finger", "price": 250, "veg": true, "spicy": 0 },
+        { "name": "Mix Veg", "price": 230, "veg": true, "spicy": 0 },
+        { "name": "Paneer Tikka", "price": 260, "veg": true, "spicy": 1 },
+        { "name": "Paneer Malai Tikka", "price": 280, "veg": true, "spicy": 0 },
+        { "name": "Mushroom Tikka", "price": 270, "veg": true, "spicy": 1 },
+        { "name": "Paneer Garlic Tikka", "price": 270, "veg": true, "spicy": 1 },
+        { "name": "Paneer Pudina Tikka", "price": 270, "veg": true, "spicy": 0 },
+        { "name": "Paneer Kasturi Tikka", "price": 260, "veg": true, "spicy": 0 },
+        { "name": "Paneer Kali Mirch Tikka", "price": 280, "veg": true, "spicy": 2 },
+        { "name": "Veg. Seekh Kabab", "price": 300, "veg": true, "spicy": 1 }
+      ]
+    },
+    {
+      "name": "Tandoor Se",
+      "items": [
+        { "name": "Plain Chapati", "price": 10, "veg": true, "spicy": 0 },
+        { "name": "Butter Chapati", "price": 12, "veg": true, "spicy": 0 },
+        { "name": "Cream Chapati", "price": 15, "veg": true, "spicy": 0 },
+        { "name": "Plain Naan", "price": 30, "veg": true, "spicy": 0 },
+        { "name": "Butter Naan", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Lacha Prantha", "price": 35, "veg": true, "spicy": 0 },
+        { "name": "Onion Kulcha", "price": 45, "veg": true, "spicy": 0 },
+        { "name": "Cheese Naan", "price": 60, "veg": true, "spicy": 0 },
+        { "name": "Garlic Naan", "price": 60, "veg": true, "spicy": 0 },
+        { "name": "Cheese Naan with Gravy", "price": 200, "veg": true, "spicy": 1 },
+        { "name": "Keema Naan with Chicken", "price": 230, "veg": false, "spicy": 1 }
+      ]
+    },
+    {
+      "name": "Burger",
+      "items": [
+        { "name": "Aloo Tikki Burger", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Veg. Burger", "price": 50, "veg": true, "spicy": 0 },
+        { "name": "Corn Burger", "price": 60, "veg": true, "spicy": 0 },
+        { "name": "Jalapeno Burger", "price": 70, "veg": true, "spicy": 1 },
+        { "name": "Cheese Burger", "price": 80, "veg": true, "spicy": 0 },
+        { "name": "Paneer Burger", "price": 120, "veg": true, "spicy": 0 },
+        { "name": "Karan Special Burger", "price": 140, "veg": true, "spicy": 1 }
+      ]
+    },
+    {
+      "name": "Pasta",
+      "items": [
+        { "name": "White Pasta", "price": 100, "veg": true, "spicy": 0 },
+        { "name": "Red Pasta", "price": 110, "veg": true, "spicy": 1 },
+        { "name": "Mix Pasta", "price": 120, "veg": true, "spicy": 1 },
+        { "name": "Paneer Pasta", "price": 140, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Side Order",
+      "items": [
+        { "name": "Classic Fries", "price": 100, "veg": true, "spicy": 0 },
+        { "name": "Peri Peri Fries", "price": 130, "veg": true, "spicy": 1 },
+        { "name": "Stuff Garlic Bread", "price": 120, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Sandwich",
+      "items": [
+        { "name": "Garlic Sandwich", "price": 80, "veg": true, "spicy": 0 },
+        { "name": "Mix Sandwich", "price": 100, "veg": true, "spicy": 0 },
+        { "name": "Cheese Garlic Sandwich", "price": 120, "veg": true, "spicy": 0 },
+        { "name": "Paneer Sandwich", "price": 140, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Pizza",
+      "items": [
+        { "name": "Margherita Pizza", "regular": 100, "medium": 200, "large": 300, "veg": true, "spicy": 0 },
+        { "name": "Farm Fresh Pizza", "regular": 120, "medium": 250, "large": 370, "veg": true, "spicy": 0 },
+        { "name": "Yummy Pizza", "regular": 140, "medium": 270, "large": 390, "veg": true, "spicy": 0 },
+        { "name": "Punjabi Pizza", "regular": 160, "medium": 300, "large": 410, "veg": true, "spicy": 1 },
+        { "name": "Shahi Paneer Pizza", "regular": 200, "medium": 320, "large": 430, "veg": true, "spicy": 0 },
+        { "name": "USA Pizza", "regular": 220, "medium": 340, "large": 450, "veg": true, "spicy": 0 },
+        { "name": "Mexican Pizza", "regular": 250, "medium": 370, "large": 480, "veg": true, "spicy": 1 },
+        { "name": "Ultimate Pizza", "regular": 270, "medium": 400, "large": 520, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Snacks",
+      "items": [
+        { "name": "Spring Rolls", "serving": "2 Pc.", "price": 100, "veg": true, "spicy": 0 },
+        { "name": "Cheese Balls", "serving": "8 Pc.", "price": 120, "veg": true, "spicy": 0 },
+        { "name": "Cheese Corn Rolls", "serving": "8 Pc.", "price": 200, "veg": true, "spicy": 0 },
+        { "name": "Paneer Kabab", "serving": "8 Pc.", "price": 150, "veg": true, "spicy": 0 },
+        { "name": "Cheese Potatoes", "serving": "10 Pc.", "price": 90, "veg": true, "spicy": 0 },
+        { "name": "Veg. Manchurian", "price": 150, "veg": true, "spicy": 1 },
+        { "name": "Cheese Manchurian", "price": 230, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Soup",
+      "items": [
+        { "name": "Chicken Soup", "price": 150, "veg": false, "spicy": 0 },
+        { "name": "Veg Soup", "price": 120, "veg": true, "spicy": 0 }
+      ]
+    }
+  ]
+}

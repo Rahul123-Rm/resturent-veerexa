@@ -1,0 +1,115 @@
+{
+  "name": "Berojgar Engineers Restaurant",
+  "tagline": "Dhaba Style North Indian Comfort Food",
+  "location": "Bhawarkua, Indore",
+  "accent": "#B91C1C",
+  "currency": "₹",
+  "categories": [
+    {
+      "name": "Veg Main Course",
+      "items": [
+        { "name": "Mix Veg", "half": 80, "full": 100, "veg": true, "spicy": 0 },
+        { "name": "Aloo Chole", "half": 80, "full": 100, "veg": true, "spicy": 1 },
+        { "name": "Chana Masala / Chole", "half": 80, "full": 100, "veg": true, "spicy": 1 },
+        { "name": "Aloo Dumdar", "half": 80, "full": 100, "veg": true, "spicy": 1 },
+        { "name": "Aloo Matar", "half": 80, "full": 100, "veg": true, "spicy": 0 },
+        { "name": "Aloo Gobhi", "half": 80, "full": 100, "veg": true, "spicy": 0 },
+        { "name": "Sev Tamatar", "half": 80, "full": 100, "veg": true, "spicy": 1 },
+        { "name": "Sev Masala", "half": 100, "full": 120, "veg": true, "spicy": 1 },
+        { "name": "Dudh Sev / Sev Bhaji", "half": 120, "full": 150, "veg": true, "spicy": 0 },
+        { "name": "Bhindi Masala", "half": 100, "full": 120, "veg": true, "spicy": 0 },
+        { "name": "Bhindi Kurkuri", "half": 120, "full": 150, "veg": true, "spicy": 0 },
+        { "name": "Jeera Aloo", "half": 80, "full": 100, "veg": true, "spicy": 0 },
+        { "name": "Matar Masala", "half": 80, "full": 100, "veg": true, "spicy": 1 }
+      ]
+    },
+    {
+      "name": "Paneer Main Course",
+      "items": [
+        { "name": "Kaju Curry", "half": 100, "full": 150, "veg": true, "spicy": 0 },
+        { "name": "Kaju Masala", "half": 100, "full": 150, "veg": true, "spicy": 1 },
+        { "name": "Kaju Paneer Masala", "half": 120, "full": 170, "veg": true, "spicy": 1 },
+        { "name": "Matar Paneer", "half": 100, "full": 150, "veg": true, "spicy": 0 },
+        { "name": "Paneer Masala", "half": 100, "full": 150, "veg": true, "spicy": 1 },
+        { "name": "Matar Paneer Masala", "half": 120, "full": 170, "veg": true, "spicy": 1 },
+        { "name": "Chilli Paneer", "price": 150, "veg": true, "spicy": 2 },
+        { "name": "Shahi Paneer", "half": 120, "full": 170, "veg": true, "spicy": 0 },
+        { "name": "Paneer Tikka", "price": 170, "veg": true, "spicy": 1 },
+        { "name": "Paneer Bhurji", "half": 120, "full": 170, "veg": true, "spicy": 0 },
+        { "name": "Paneer Punjabi", "half": 120, "full": 170, "veg": true, "spicy": 1 },
+        { "name": "Paneer Lababdar", "half": 120, "full": 170, "veg": true, "spicy": 1 },
+        { "name": "Paneer Kolhapuri", "half": 120, "full": 170, "veg": true, "spicy": 2 },
+        { "name": "Kadhai Paneer", "half": 120, "full": 170, "veg": true, "spicy": 1 }
+      ]
+    },
+    {
+      "name": "Tawa Roti / Paratha",
+      "items": [
+        { "name": "Tawa Roti", "price": 8, "veg": true, "spicy": 0 },
+        { "name": "Tawa Roti Butter", "price": 10, "veg": true, "spicy": 0 },
+        { "name": "Pudi", "price": 15, "veg": true, "spicy": 0 },
+        { "name": "Plain Paratha", "price": 20, "veg": true, "spicy": 0 },
+        { "name": "Ghee Paratha", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Aloo Paratha", "price": 30, "veg": true, "spicy": 0 },
+        { "name": "Sev Paratha", "price": 30, "veg": true, "spicy": 0 },
+        { "name": "Pyaz Paratha", "price": 30, "veg": true, "spicy": 0 },
+        { "name": "Gobhi Paratha", "price": 30, "veg": true, "spicy": 0 },
+        { "name": "Paneer Paratha", "price": 50, "veg": true, "spicy": 0 },
+        { "name": "Aloo Pyaz Mix Paratha", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Aloo Sev Mix Paratha", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Sev Pyaz Mix Paratha", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Full Mix Paratha", "price": 50, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Tandoori Roti / Naan",
+      "items": [
+        { "name": "Tandoori Roti", "price": 10, "veg": true, "spicy": 0 },
+        { "name": "Butter Tandoori Roti", "price": 12, "veg": true, "spicy": 0 },
+        { "name": "Plain Naan", "price": 20, "veg": true, "spicy": 0 },
+        { "name": "Butter Naan", "price": 25, "veg": true, "spicy": 0 },
+        { "name": "Aloo Naan", "price": 30, "veg": true, "spicy": 0 },
+        { "name": "Lachha Paratha", "price": 30, "veg": true, "spicy": 0 },
+        { "name": "Aloo Pyaz Naan", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Paneer Naan", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Garlic Naan", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Paneer Chur Chur Naan", "price": 60, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Rice Main Course",
+      "items": [
+        { "name": "Plain Rice", "half": 65, "full": 100, "veg": true, "spicy": 0 },
+        { "name": "Jeera Rice", "half": 80, "full": 120, "veg": true, "spicy": 0 },
+        { "name": "Khichdi", "half": 90, "full": 120, "veg": true, "spicy": 0 },
+        { "name": "Butter Khichdi", "half": 100, "full": 130, "veg": true, "spicy": 0 },
+        { "name": "Fried Rice", "price": 130, "veg": true, "spicy": 1 },
+        { "name": "Veg Pulao", "price": 140, "veg": true, "spicy": 0 },
+        { "name": "Veg Biryani", "price": 150, "veg": true, "spicy": 1 }
+      ]
+    },
+    {
+      "name": "Dal Main Course",
+      "items": [
+        { "name": "Dal Fry", "half": 80, "full": 110, "veg": true, "spicy": 0 },
+        { "name": "Dal Butter Fry", "half": 100, "full": 130, "veg": true, "spicy": 0 },
+        { "name": "Dal Tadka", "half": 100, "full": 130, "veg": true, "spicy": 1 },
+        { "name": "Dal Jeera Fry", "half": 100, "full": 130, "veg": true, "spicy": 0 },
+        { "name": "Dal Makhani", "half": 120, "full": 150, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Sides",
+      "items": [
+        { "name": "Papad Roasted / Fry", "price": 20, "veg": true, "spicy": 0 },
+        { "name": "Masala Papad", "price": 30, "veg": true, "spicy": 1 },
+        { "name": "Mix Salad", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Dahi", "price": 25, "veg": true, "spicy": 0 },
+        { "name": "Boondi Raita", "price": 30, "veg": true, "spicy": 0 },
+        { "name": "Masala Chhach", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Lassi", "price": 50, "veg": true, "spicy": 0 },
+        { "name": "Gulab Jamun", "price": 10, "serving": "1 piece", "veg": true, "spicy": 0 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "name": "Spice Garden",
+  "tagline": "Modern Indian Kitchen & Bar",
+  "location": "Vijay Nagar, Indore",
+  "accent": "#C1502E",
+  "currency": "₹",
+  "categories": [
+    {
+      "name": "Starters",
+      "items": [
+        {
+          "name": "Paneer Tikka",
+          "description": "Char-grilled cottage cheese, mint chutney, charred onions",
+          "price": 249,
+          "veg": true,
+          "spicy": 1,
+          "tag": "Bestseller"
+        },
+        {
+          "name": "Chicken Seekh Kebab",
+          "description": "Hand-pounded spices, charcoal smoke, sliced onions",
+          "price": 299,
+          "veg": false,
+          "spicy": 2
+        },
+        {
+          "name": "Corn & Cheese Galouti",
+          "description": "Sweet corn patties, melted cheese, tamarind glaze",
+          "price": 219,
+          "veg": true,
+          "spicy": 0
+        }
+      ]
+    },
+    {
+      "name": "Mains",
+      "items": [
+        {
+          "name": "Butter Chicken",
+          "description": "Tandoor-roasted chicken, tomato-butter gravy, cream",
+          "price": 379,
+          "veg": false,
+          "spicy": 1,
+          "tag": "Chef's Special"
+        },
+        {
+          "name": "Dal Makhani",
+          "description": "Black lentils, slow-simmered overnight, smoked butter",
+          "price": 269,
+          "veg": true,
+          "spicy": 0
+        },
+        {
+          "name": "Kadhai Paneer",
+          "description": "Cottage cheese, bell peppers, fresh-pounded kadhai masala",
+          "price": 289,
+          "veg": true,
+          "spicy": 2
+        },
+        {
+          "name": "Mutton Rogan Josh",
+          "description": "Kashmiri red chillies, slow-braised on the bone",
+          "price": 429,
+          "veg": false,
+          "spicy": 2
+        }
+      ]
+    },
+    {
+      "name": "Breads & Rice",
+      "items": [
+        {
+          "name": "Butter Naan",
+          "description": "Tandoor-baked, brushed with white butter",
+          "price": 69,
+          "veg": true,
+          "spicy": 0
+        },
+        {
+          "name": "Laccha Paratha",
+          "description": "Multi-layered, whole wheat, ghee-roasted",
+          "price": 79,
+          "veg": true,
+          "spicy": 0
+        },
+        {
+          "name": "Jeera Rice",
+          "description": "Basmati rice, tempered cumin, ghee",
+          "price": 189,
+          "veg": true,
+          "spicy": 0
+        }
+      ]
+    },
+    {
+      "name": "Desserts",
+      "items": [
+        {
+          "name": "Gulab Jamun",
+          "description": "Warm milk dumplings, saffron-cardamom syrup",
+          "price": 129,
+          "veg": true,
+          "spicy": 0,
+          "tag": "New"
+        },
+        {
+          "name": "Phirni",
+          "description": "Ground rice pudding, set in a clay bowl, pistachios",
+          "price": 149,
+          "veg": true,
+          "spicy": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Guru Kripa Amritsari Naan House",
+  "tagline": "Authentic Amritsari Breads & Home-Style Curries",
+  "location": "Amritsar, Punjab",
+  "accent": "#E07B00",
+  "currency": "₹",
+  "categories": [
+    {
+      "name": "Roti / Naan",
+      "items": [
+        { "name": "Plain Tandoori Roti", "price": 8, "veg": true, "spicy": 0 },
+        { "name": "Butter Tandoori Roti", "price": 10, "veg": true, "spicy": 0 },
+        { "name": "Plain Naan", "price": 20, "veg": true, "spicy": 0 },
+        { "name": "Aloo Naan", "price": 25, "veg": true, "spicy": 1 },
+        { "name": "Laccha Paratha", "price": 25, "veg": true, "spicy": 0 },
+        { "name": "Aloo-Pyaz Naan", "price": 30, "veg": true, "spicy": 1 },
+        { "name": "Butter Naan", "price": 30, "veg": true, "spicy": 0 },
+        { "name": "Stuffed Naan", "price": 35, "veg": true, "spicy": 1 },
+        { "name": "Paneer Naan", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Garlic Naan", "price": 40, "veg": true, "spicy": 0 },
+        { "name": "Laccha Chur-Chur Naan", "price": 50, "veg": true, "spicy": 0, "tag": "Bestseller" },
+        { "name": "Masala Naan", "price": 50, "veg": true, "spicy": 1 },
+        { "name": "Aloo Chur-Chur Naan", "price": 50, "veg": true, "spicy": 1 },
+        { "name": "Aloo-Pyaz Chur-Chur Naan", "price": 55, "veg": true, "spicy": 1 },
+        { "name": "Stuffed Chur-Chur Naan", "price": 60, "veg": true, "spicy": 1, "tag": "Chef's Special" },
+        { "name": "Paneer Chur-Chur Naan", "price": 65, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Tawa Roti / Paratha",
+      "items": [
+        { "name": "Plain Tawa Roti", "price": 10, "veg": true, "spicy": 0 },
+        { "name": "Butter Tawa Roti", "price": 12, "veg": true, "spicy": 0 },
+        { "name": "Plain Paratha", "price": 20, "veg": true, "spicy": 0 },
+        { "name": "Aloo Paratha", "price": 35, "veg": true, "spicy": 1, "tag": "Bestseller" },
+        { "name": "Aloo-Pyaz Paratha", "price": 40, "veg": true, "spicy": 1 },
+        { "name": "Stuffed Paratha", "price": 45, "veg": true, "spicy": 1 },
+        { "name": "Paneer Paratha", "price": 50, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Vegetable",
+      "items": [
+        { "name": "Chole", "half": 50, "full": 100, "veg": true, "spicy": 1, "tag": "Bestseller" },
+        { "name": "Kadhi Pakoda", "half": 50, "full": 100, "veg": true, "spicy": 1 },
+        { "name": "Dal Fry Tadka", "half": 60, "full": 100, "veg": true, "spicy": 1 },
+        { "name": "Dal Makhani", "half": 70, "full": 110, "veg": true, "spicy": 0 },
+        { "name": "Aloo Jeera Fry", "half": 70, "full": 110, "veg": true, "spicy": 1 },
+        { "name": "Aloo Matar", "half": 80, "full": 140, "veg": true, "spicy": 1 },
+        { "name": "Sev Tamatar", "half": 80, "full": 140, "veg": true, "spicy": 2 },
+        { "name": "Chana Masala", "half": 80, "full": 140, "veg": true, "spicy": 2 },
+        { "name": "Mix Veg", "half": 100, "full": 170, "veg": true, "spicy": 1 },
+        { "name": "Kaju Kari", "half": 120, "full": 220, "veg": true, "spicy": 0, "tag": "Chef's Special" }
+      ]
+    },
+    {
+      "name": "Rice Dishes",
+      "items": [
+        { "name": "Plain Rice", "half": 40, "full": 70, "veg": true, "spicy": 0 },
+        { "name": "Chole Chawal", "half": 60, "full": 100, "veg": true, "spicy": 1 },
+        { "name": "Kadhi Chawal", "half": 60, "full": 100, "veg": true, "spicy": 1 },
+        { "name": "Dal Chawal", "half": 60, "full": 100, "veg": true, "spicy": 0 },
+        { "name": "Jeera Rice", "half": 60, "full": 100, "veg": true, "spicy": 0 },
+        { "name": "Paneer Rice", "half": 70, "full": 110, "veg": true, "spicy": 0 },
+        { "name": "Veg Biryani", "half": 90, "full": 130, "veg": true, "spicy": 1, "tag": "Bestseller" },
+        { "name": "Dal Khichdi", "half": 100, "full": 180, "veg": true, "spicy": 0 },
+        { "name": "Paneer Fried Rice", "half": 100, "full": 180, "veg": true, "spicy": 1 }
+      ]
+    },
+    {
+      "name": "Extras",
+      "items": [
+        { "name": "Raita Half", "price": 20, "veg": true, "spicy": 0 },
+        { "name": "Raita Full", "price": 30, "veg": true, "spicy": 0 },
+        { "name": "Tandoori Papad", "price": 10, "veg": true, "spicy": 0 }
+      ]
+    }
+  ]
+}

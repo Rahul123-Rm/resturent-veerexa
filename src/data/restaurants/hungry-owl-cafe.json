@@ -1,0 +1,163 @@
+{
+  "name": "Hungry Owl Cafe & Confectionery",
+  "tagline": "Coffee, Bakes & All Day Breakfast",
+  "location": "Downtown",
+  "accent": "#4A6FA5",
+  "currency": "₹",
+  "categories": [
+    {
+      "name": "All Day Breakfast",
+      "items": [
+        {
+          "name": "Parfait Jar",
+          "price": 250,
+          "description": "Crunchy granola mixed with creamy yogurt and seasonal fruits",
+          "veg": true,
+          "spicy": 0
+        },
+        {
+          "name": "Breakfast Pancakes",
+          "price": 210,
+          "description": "Served with maple syrup, honey or vanilla ice-cream",
+          "veg": true,
+          "spicy": 0
+        },
+        {
+          "name": "Smashed Avocado Toast",
+          "price": 210,
+          "description": "Fresh avocados mashed with vegetables on slice of European toast",
+          "veg": true,
+          "spicy": 0
+        },
+        {
+          "name": "Non-Veg English Breakfast",
+          "price": 260,
+          "description": "Choice of eggs served with slices of toast, grilled vegetables, baked beans and chicken sausage",
+          "veg": false,
+          "spicy": 0
+        },
+        {
+          "name": "Veg English Breakfast",
+          "price": 210,
+          "description": "Grilled vegetables served with slices of toast and baked beans",
+          "veg": true,
+          "spicy": 0
+        },
+        {
+          "name": "Scrambled Eggs",
+          "price": 180,
+          "description": "Buttery eggs scrambled on pan served with toast",
+          "veg": false,
+          "spicy": 0
+        },
+        {
+          "name": "Sunny Side Up",
+          "price": 180,
+          "description": "Sunny side up eggs served with fresh toast",
+          "veg": false,
+          "spicy": 0
+        },
+        {
+          "name": "Masala Omelette With Cheese",
+          "price": 210,
+          "description": "Egg omelette made with fresh vegetables served with toast",
+          "veg": false,
+          "spicy": 1
+        }
+      ]
+    },
+    {
+      "name": "Sandwich",
+      "note": "Served with coleslaw & chips",
+      "items": [
+        { "name": "Couch Potato Burger", "price": 110, "veg": true, "spicy": 0 },
+        { "name": "Paneer Makhni Sandwich", "price": 100, "veg": true, "spicy": 1 },
+        { "name": "Veg Marine Sandwich", "price": 110, "veg": true, "spicy": 0 },
+        { "name": "Falafel Sandwich", "price": 180, "veg": true, "spicy": 0 },
+        { "name": "Paneer Masala Roll", "price": 180, "veg": true, "spicy": 1 },
+        { "name": "Grilled Chicken Burger", "price": 145, "veg": false, "spicy": 0 },
+        { "name": "Tandoori Chicken Sandwich", "price": 140, "veg": false, "spicy": 1 },
+        { "name": "Chicken Marine Sandwich", "price": 130, "veg": false, "spicy": 0 },
+        { "name": "Chicken Masala Roll", "price": 210, "veg": false, "spicy": 1 }
+      ]
+    },
+    {
+      "name": "Italian",
+      "note": "Served with garlic bread",
+      "items": [
+        { "name": "Arrabiata Pasta", "price": 170, "veg": true, "spicy": 1 },
+        { "name": "Pink Sauce Pasta", "price": 210, "veg": true, "spicy": 0 },
+        { "name": "Alfredo Pasta", "price": 220, "veg": true, "spicy": 0 },
+        { "name": "Arrabiata Spaghetti", "price": 180, "veg": true, "spicy": 1 },
+        { "name": "Pink Sauce Spaghetti", "price": 220, "veg": true, "spicy": 0 },
+        { "name": "Alfredo Spaghetti", "price": 230, "veg": true, "spicy": 0 }
+      ]
+    },
+    {
+      "name": "Small Plates",
+      "note": "Served with homemade dip & coleslaw",
+      "items": [
+        { "name": "Chicken Tenders", "price": 220, "veg": false, "spicy": 0 },
+        { "name": "Cheesy Fries", "price": 220, "veg": true, "spicy": 0 },
+        { "name": "Baked Nachos", "price": 190, "veg": true, "spicy": 0 },
+        { "name": "Peri Peri Fries", "price": 180, "veg": true, "spicy": 1 },
+        { "name": "Smileys", "price": 140, "veg": true, "spicy": 0 },
+        { "name": "Grilled Chicken Wraps", "price": 145, "veg": false, "spicy": 0 },
+        { "name": "Garlic Bread With Cheese", "price": 140, "veg": true, "spicy": 0 },
+        { "name": "Korean Cheese Buns", "price": 140, "veg": true, "spicy": 0 },
+        { "name": "Salted French Fries", "price": 140, "veg": true, "spicy": 0 },
+        { "name": "Chilly Cheese Wraps", "price": 125, "veg": true, "spicy": 1 },
+        { "name": "Masala Maggie", "price": 65, "veg": true, "spicy": 1 },
+        { "name": "Cheese Maggie", "price": 95, "veg": true, "spicy": 0 },
+        { "name": "Korean Noodles", "price": 95, "veg": true, "spicy": 1 }
+      ]
+    },
+    {
+      "name": "Large Plates",
+      "items": [
+        {
+          "name": "Grilled Chicken Meal",
+          "price": 290,
+          "description": "Grilled chicken breast in mushroom sauce, brown rice and grilled vegetables",
+          "veg": false,
+          "spicy": 0
+        },
+        {
+          "name": "Chicken Picatta",
+          "price": 290,
+          "description": "Grilled chicken breast served on a bed of spaghetti with sauteed vegetables",
+          "veg": false,
+          "spicy": 0
+        },
+        {
+          "name": "Chilly Chicken Snack Bowl",
+          "price": 280,
+          "description": "Chicken tossed in schezwan sauce served with fried rice",
+          "veg": false,
+          "spicy": 2
+        },
+        {
+          "name": "Veg Manchurian Meal With Fried Rice",
+          "price": 240,
+          "description": "Manchurian balls tossed in spicy schezwan sauce served with fried rice",
+          "veg": true,
+          "spicy": 1
+        }
+      ]
+    },
+    {
+      "name": "Indian Meal-Boxes",
+      "note": "Available in rice & parathas",
+      "items": [
+        { "name": "Rajma Rice", "price": 210, "veg": true, "spicy": 0 },
+        { "name": "Dal Makhni", "price": 210, "veg": true, "spicy": 0 },
+        { "name": "Kadhai Paneer", "price": 240, "veg": true, "spicy": 1 },
+        { "name": "Veg Biryani", "price": 240, "veg": true, "spicy": 1 },
+        { "name": "Butter Chicken", "price": 290, "veg": false, "spicy": 0 },
+        { "name": "Kadhai Chicken", "price": 290, "veg": false, "spicy": 1 },
+        { "name": "Chicken Keema", "price": 290, "veg": false, "spicy": 1 },
+        { "name": "Chicken Biryani", "price": 290, "veg": false, "spicy": 1 }
+      ]
+    }
+  ]
+}
