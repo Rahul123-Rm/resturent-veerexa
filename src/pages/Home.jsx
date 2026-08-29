@@ -1,36 +1,16 @@
 import { Link } from 'react-router-dom'
 import { restaurantList } from '../data/loadRestaurants.js'
 
-/* ── Restaurant card data (hardcoded sample to match design) ── */
-const PLACES = [
-  {
-    slug: 'spice-garden',
-    name: 'Fat Tiger',
-    subtitle: 'Indian Kitchen & Bar',
-    tags: ['North Indian', 'Chinese'],
-    location: 'Indore',
-    rating: 4.6,
-    image: '/images/fat-tiger.jpg',
-  },
-  {
-    slug: 'cafe-mocha',
-    name: 'Hungry Owl Cafe',
-    subtitle: 'Cafe & Bistro',
-    tags: ['Cafe', 'Continental', 'Italian'],
-    location: 'Indore',
-    rating: 4.5,
-    image: '/images/hungry-owl.jpg',
-  },
-  {
-    slug: null,
-    name: 'Guru Kripa Amritsari Naan House',
-    subtitle: 'Authentic Street Food',
-    tags: ['North Indian', 'Street Food'],
-    location: 'Indore',
-    rating: 4.7,
-    image: '/images/guru-kripa.jpg',
-  },
-]
+/* ── Dynamically load PLACES from JSON files ── */
+const PLACES = restaurantList.map(r => ({
+  slug: r.slug,
+  name: r.name,
+  subtitle: r.tagline || 'Restaurant & Cafe',
+  tags: [r.categories?.[0]?.name || 'Food', r.categories?.[1]?.name || 'Beverages'].filter(Boolean),
+  location: r.location || 'Indore',
+  rating: 4.5,
+  image: `/images/${r.slug}.jpg`, // Optional: Add images with these names in public/images/
+}))
 
 export default function Home() {
   return (
@@ -55,7 +35,7 @@ export default function Home() {
             <a href="#about" className="vm__nav-link">About Us</a>
           </div>
 
-          <a href="#" className="vm__btn vm__btn--primary vm__btn--sm">
+          <a href="mailto:hello@veerexa.com" className="vm__btn vm__btn--primary vm__btn--sm">
             List Your Restaurant
           </a>
         </div>
