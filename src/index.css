@@ -1711,18 +1711,132 @@ img { display: block; max-width: 100%; }
   .section { padding: 24px 16px; }
   .resto-grid { grid-template-columns: 1fr; }
 
-  /* Menu page */
-  .menu-hero__cover { height: 150px; }
-  .menu-hero__info { padding: 14px 16px; }
-  .mfilter-zone { padding: 10px 16px 0; }
-  .mfilter-chips { gap: 6px; }
-  .mfilter-chip { padding: 5px 11px; font-size: 12px; }
-  .menu-sections { padding: 0 12px; }
-  .mcat-nav__list { padding: 0 12px; }
+  /* ── MENU PAGE MOBILE FIX ── */
 
+  /* Cover image: taller and full-bleed */
+  .menu-hero__cover { height: 200px; }
+
+  /* Restaurant info section: bigger, more padded */
+  .menu-hero__info {
+    padding: 18px 16px 14px;
+  }
+
+  /* Restaurant name: bigger on mobile */
+  .menu-hero__name {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  /* Tagline */
+  .menu-hero__tagline {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  /* Chips: bigger, more tap-friendly */
+  .menu-hero__chips { gap: 8px; flex-wrap: wrap; }
+  .menu-hero__chip {
+    font-size: 12.5px;
+    padding: 6px 12px;
+  }
+
+  /* Filter zone */
+  .mfilter-zone { padding: 12px 14px 0; gap: 10px; }
+
+  /* Search bar: full width, bigger */
+  .msearch__bar {
+    padding: 13px 16px;
+    border-radius: 12px;
+  }
+  .msearch__input { font-size: 15px; }
+
+  /* Filter chips */
+  .mfilter-chips { gap: 7px; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
+  .mfilter-chips::-webkit-scrollbar { display: none; }
+  .mfilter-chip { padding: 7px 14px; font-size: 13px; white-space: nowrap; flex-shrink: 0; }
+
+  /* Category nav tabs: sticky, bigger */
+  .mcat-nav {
+    top: 0;
+    z-index: 100;
+  }
+  .mcat-nav__list { padding: 0 14px; gap: 0; }
+  .mcat-nav__btn {
+    font-size: 13.5px;
+    padding: 13px 14px;
+    font-weight: 600;
+  }
+
+  /* Menu layout: no padding */
+  .menu-layout { padding: 0; gap: 0; }
+  .menu-content { padding: 0; }
+
+  /* Menu sections padding */
+  .menu-sections { padding: 0 14px; gap: 0; }
+
+  /* Section title: big and bold */
+  .menu-section {
+    padding: 22px 0 12px;
+    scroll-margin-top: 54px;
+  }
+  .menu-section__title {
+    font-size: 19px;
+    font-weight: 800;
+  }
+  .menu-section__count {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  /* Menu list: single column */
+  .menu-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Menu item: Zomato/Thalii style — full width row */
+  .menu-item {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid var(--border-light);
+    padding: 16px 0;
+    gap: 14px;
+    box-shadow: none;
+    transform: none !important;
+  }
+  .menu-item:last-child { border-bottom: none; }
+
+  /* Item image: bigger thumbnail */
   .menu-item__img-wrap {
-    width: 76px;
-    height: 76px;
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .menu-item__img-placeholder { font-size: 32px; }
+
+  /* Item name: readable size */
+  .menu-item__name {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  /* Price: prominent */
+  .menu-item__price {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .price-full { font-size: 15px; }
+  .price-half { font-size: 13px; }
+
+  /* Description */
+  .menu-item__desc {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
   }
 }
 
@@ -1731,5 +1845,13 @@ img { display: block; max-width: 100%; }
   .hero__search-btn { width: 100%; justify-content: center; border-radius: 10px; }
   .nav__cta { font-size: 13px; padding: 8px 14px; }
   .menu-list { grid-template-columns: 1fr; }
+
+  /* Extra small phones: even bigger tap targets */
+  .mcat-nav__btn { font-size: 13px; padding: 12px 12px; }
+  .menu-hero__cover { height: 180px; }
+  .menu-hero__name { font-size: 22px; }
+  .menu-item__img-wrap { width: 84px; height: 84px; }
+  .menu-section__title { font-size: 18px; }
+  .mfilter-chip { font-size: 12.5px; padding: 7px 13px; }
 }
 
