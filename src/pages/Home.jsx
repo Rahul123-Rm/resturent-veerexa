@@ -1,375 +1,379 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { restaurantList } from '../data/loadRestaurants.js'
 
-/* ── Dynamically load PLACES from JSON files ── */
-const PLACES = restaurantList.map(r => ({
+/* ── Build PLACES from JSON data ── */
+const PLACES = restaurantList.map((r) => ({
   slug: r.slug,
   name: r.name,
-  subtitle: r.tagline || 'Restaurant & Cafe',
-  tags: [r.categories?.[0]?.name || 'Food', r.categories?.[1]?.name || 'Beverages'].filter(Boolean),
+  subtitle: r.tagline || 'Restaurant & Café',
+  tags: [r.categories?.[0]?.name, r.categories?.[1]?.name].filter(Boolean),
   location: r.location || 'Indore',
-  rating: 4.5,
-  image: `/images/${r.slug}.jpg`, // Optional: Add images with these names in public/images/
+  rating: (4.2 + Math.random() * 0.7).toFixed(1),
+  deliveryTime: `${25 + Math.floor(Math.random() * 20)} min`,
+  image: `/images/${r.slug}.jpg`,
+  emoji: ['🍛', '☕', '🍕', '🥘', '🍜', '🍔', '🥗'][Math.floor(Math.random() * 7)],
 }))
 
-export default function Home() {
-  return (
-    <div className="vm">
+const QUICK_CATS = [
+  { emoji: '🍽️', label: 'All' },
+  { emoji: '🍛', label: 'Indian' },
+  { emoji: '☕', label: 'Café' },
+  { emoji: '🍕', label: 'Fast Food' },
+  { emoji: '🥗', label: 'Healthy' },
+  { emoji: '🍜', label: 'Chinese' },
+  { emoji: '🍔', label: 'Burgers' },
+]
 
+export default function Home() {
+  const [searchQuery, setSearchQuery] = useState('')
+  const [activeCat, setActiveCat] = useState('All')
+
+  const filtered = PLACES.filter((p) =>
+    p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    p.subtitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    p.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()))
+  )
+
+  return (
+    <div>
       {/* ── Navbar ── */}
-      <nav className="vm__nav">
-        <div className="vm__container vm__nav-inner">
-          <Link to="/" className="vm__nav-logo">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
-              <path d="M12 8c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"/>
-              <path d="M12 2v2M12 20v2M2 12h2M20 12h2"/>
-            </svg>
+      <nav className="nav">
+        <div className="nav__inner">
+          <Link to="/" className="nav__logo" id="nav-logo">
+            <div className="nav__logo-icon">🍽️</div>
             Veerexa<span>Menu</span>
           </Link>
 
-          <div className="vm__nav-links">
-            <a href="#" className="vm__nav-link active">Home</a>
-            <a href="#explore" className="vm__nav-link">Explore Menus</a>
-            <a href="#how-it-works" className="vm__nav-link">For Restaurants</a>
-            <a href="#about" className="vm__nav-link">About Us</a>
+          <button className="nav__location" id="nav-location-btn">
+            <div className="nav__location-dot" />
+            Indore, MP
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+
+          <div className="nav__links">
+            <a href="#explore" className="nav__link" id="nav-explore">Explore</a>
+            <a href="#how-it-works" className="nav__link" id="nav-hiw">For Restaurants</a>
           </div>
 
-          <a href="mailto:hello@veerexa.com" className="vm__btn vm__btn--primary vm__btn--sm">
-            List Your Restaurant
+          <a href="mailto:hello@veerexa.com" className="nav__cta" id="nav-cta">
+            List Restaurant
           </a>
         </div>
       </nav>
 
       {/* ── Hero ── */}
-      <section className="vm__hero">
-        <div className="vm__hero-glow"></div>
-        <div className="vm__container vm__hero-grid">
-          
-          {/* Left content */}
-          <div className="vm__hero-content">
-            <h1 className="vm__hero-h1">
-              Your Menu.<br/>
-              <span className="vm__hero-highlight">Beautifully Online.</span>
-            </h1>
-            <p className="vm__hero-sub">
-              Discover local restaurants and cafés, or launch<br/>a premium digital menu for your business.
-            </p>
-            <div className="vm__hero-actions">
-              <a href="#explore" className="vm__btn vm__btn--primary vm__btn--lg">
-                Explore Restaurants
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="#" className="vm__btn vm__btn--outline vm__btn--lg">
-                Create Your Menu
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
+      <section className="hero" id="hero">
+        <div className="hero__tag">
+          <span>🔥</span>
+          7 restaurants · Indore
+        </div>
 
-          {/* Right visual — phone + card mockup */}
-          <div className="vm__hero-visual">
-            {/* Decorative glow behind mockups */}
-            <div className="vm__hero-visual-glow"></div>
+        <h1 className="hero__h1" id="hero-title">
+          Hungry? Order from<br />
+          <span>your favourite spots</span>
+        </h1>
 
-            {/* Phone mockup */}
-            <div className="vm__mockup vm__mockup--phone">
-              <div className="vm__phone-inner">
-                <div className="vm__phone-header">
-                  <div className="vm__phone-logo">🍽️ FAT TIGER</div>
-                  <div className="vm__phone-sub">Indian Kitchen & Bar</div>
-                  <div className="vm__phone-badge">Our Specials</div>
-                </div>
-                {[
-                  {name:'Butter Chicken', price:'₹280', img:'🍛'},
-                  {name:'Dal Makhani', price:'₹220', img:'🥘'},
-                  {name:'Paneer Tikka', price:'₹249', img:'🥗'},
-                  {name:'Biryani', price:'₹280', img:'🍚'},
-                ].map((item, i) => (
-                  <div className="vm__phone-item" key={i}>
-                    <div className="vm__phone-item-img">{item.img}</div>
-                    <div className="vm__phone-item-info">
-                      <div className="vm__phone-item-name">{item.name}</div>
-                      <div className="vm__phone-item-price">{item.price}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+        <p className="hero__sub">
+          Discover menus from the best restaurants and cafés in your city — all in one place.
+        </p>
 
-            {/* Card mockup — food image */}
-            <div className="vm__mockup vm__mockup--card">
-              <img src="/images/hero-food.jpg" alt="Premium food spread" className="vm__card-food-img" />
-            </div>
-
-            {/* Floating badge */}
-            <div className="vm__hero-float-badge">
-              <span className="vm__hero-float-dot"></span>
-              <span>Live menus · Real-time updates</span>
-            </div>
+        {/* Search */}
+        <div className="hero__search-wrap">
+          <div className="hero__search" id="hero-search">
+            <span className="hero__search-icon">🔍</span>
+            <input
+              type="text"
+              className="hero__search-input"
+              id="hero-search-input"
+              placeholder="Search restaurants, cuisines, dishes..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button className="hero__search-btn" id="hero-search-btn">
+              Search
+            </button>
           </div>
         </div>
 
-        {/* Built-for strip */}
-        <div className="vm__built-strip">
-          <div className="vm__container vm__built-inner">
-            <div className="vm__built-check">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            </div>
-            <span>Built for Restaurants, Cafés &amp; Cloud Kitchens</span>
-            <div className="vm__built-icons">
-              <span title="Restaurant">🏪</span>
-              <span title="Cafe">☕</span>
-              <span title="Cloud Kitchen">🍕</span>
-              <span title="Chef">👨‍🍳</span>
-            </div>
+        {/* Stats */}
+        <div className="hero__stats">
+          <div className="hero__stat">
+            <span className="hero__stat-num">7+</span>
+            <span className="hero__stat-label">Restaurants</span>
+          </div>
+          <div className="hero__stat-divider" />
+          <div className="hero__stat">
+            <span className="hero__stat-num">100+</span>
+            <span className="hero__stat-label">Dishes</span>
+          </div>
+          <div className="hero__stat-divider" />
+          <div className="hero__stat">
+            <span className="hero__stat-num">4.5★</span>
+            <span className="hero__stat-label">Avg Rating</span>
+          </div>
+          <div className="hero__stat-divider" />
+          <div className="hero__stat">
+            <span className="hero__stat-num">Free</span>
+            <span className="hero__stat-label">Browse Menus</span>
           </div>
         </div>
       </section>
 
-      {/* ── Explore Popular Places ── */}
-      <section id="explore" className="vm__restaurants">
-        <div className="vm__container">
-          <div className="vm__section-header">
-            <h2>Explore Popular Places</h2>
-            <div className="vm__section-underline"></div>
+      {/* ── Quick Category Chips ── */}
+      <div className="quick-cats" id="quick-cats">
+        <div className="quick-cats__inner">
+          {QUICK_CATS.map((cat) => (
+            <button
+              key={cat.label}
+              id={`cat-${cat.label.toLowerCase()}`}
+              className={`quick-cat ${activeCat === cat.label ? 'active' : ''}`}
+              onClick={() => setActiveCat(cat.label)}
+            >
+              <span className="quick-cat__emoji">{cat.emoji}</span>
+              {cat.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Restaurant Grid ── */}
+      <section id="explore">
+        <div className="section">
+          <div className="section__header">
+            <h2 className="section__title" id="explore-title">
+              {searchQuery ? `Results for "${searchQuery}"` : 'All Restaurants'}
+              {' '}<span>near you</span>
+            </h2>
+            <span className="section__count">{filtered.length} places</span>
           </div>
 
-          <div className="vm__places-grid">
-            {PLACES.map((place, i) => {
-              const linkTarget = place.slug ? `/${place.slug}` : '#'
-              return (
-                <Link key={i} to={linkTarget} className="vm__place-card">
-                  <div className="vm__place-img-wrap">
-                    <img src={place.image} alt={place.name} className="vm__place-img" />
-                    <div className="vm__place-rating">
-                      <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          {filtered.length > 0 ? (
+            <div className="resto-grid" id="resto-grid">
+              {filtered.map((place, i) => (
+                <Link
+                  key={place.slug || i}
+                  to={place.slug ? `/${place.slug}` : '#'}
+                  className="resto-card"
+                  id={`resto-card-${place.slug || i}`}
+                >
+                  {/* Image */}
+                  <div className="resto-card__img-wrap">
+                    <img
+                      src={place.image}
+                      alt={place.name}
+                      className="resto-card__img"
+                      onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextSibling.style.display = 'flex'; }}
+                    />
+                    <div className="resto-card__img-placeholder" style={{ display: 'none' }}>
+                      {place.emoji}
+                    </div>
+
+                    <div className="resto-card__badge">Open Now</div>
+
+                    <div className="resto-card__rating">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#fbbf24' }}>
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
                       {place.rating}
                     </div>
+
+                    <div className="resto-card__fav" onClick={(e) => { e.preventDefault(); }}>❤️</div>
                   </div>
-                  <div className="vm__place-body">
-                    <h3 className="vm__place-name">{place.name}</h3>
-                    <div className="vm__place-tags">
-                      {place.tags.map(t => <span key={t} className="vm__place-tag">{t}</span>)}
+
+                  {/* Body */}
+                  <div className="resto-card__body">
+                    <h3 className="resto-card__name">{place.name}</h3>
+                    <p className="resto-card__sub">{place.subtitle}</p>
+
+                    <div className="resto-card__tags">
+                      {place.tags.map((t) => (
+                        <span key={t} className="resto-card__tag">{t}</span>
+                      ))}
                     </div>
-                    <div className="vm__place-loc">
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                      {place.location}
+
+                    <div className="resto-card__meta">
+                      <div className="resto-card__meta-item">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                          <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        {place.location}
+                      </div>
+                      <div className="resto-card__meta-item">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <circle cx="12" cy="12" r="10" />
+                          <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        {place.deliveryTime}
+                      </div>
                     </div>
-                    <div className="vm__place-cta">
-                      <span>View Menu</span>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
+                  </div>
+
+                  {/* Offer strip */}
+                  <div className="resto-card__offer">
+                    <span>🏷️</span>
+                    View Full Menu
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ marginLeft: 'auto' }}>
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
                   </div>
                 </Link>
-              )
-            })}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="no-results" id="no-results">
+              <div className="no-results__emoji">🔍</div>
+              <p>No restaurants found</p>
+              <p className="no-results__sub">Try searching for something else</p>
+            </div>
+          )}
         </div>
       </section>
 
       {/* ── How It Works ── */}
-      <section id="how-it-works" className="vm__hiw">
-        <div className="vm__container">
-          <div className="vm__section-header">
-            <h2>How it works</h2>
-            <div className="vm__section-underline"></div>
-          </div>
-
-          <div className="vm__hiw-grid">
+      <section id="how-it-works" className="hiw">
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <h2 className="section__title" style={{ textAlign: 'center', marginBottom: '36px' }}>
+            How it <span>works</span>
+          </h2>
+          <div className="hiw__inner">
             {[
-              {
-                num: '1',
-                icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                ),
-                title: 'Choose a place',
-                desc: 'Find your favorite restaurant or café near you.',
-              },
-              {
-                num: '2',
-                icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                ),
-                title: 'Browse the menu',
-                desc: 'Explore beautifully curated menus with photos & details.',
-              },
-              {
-                num: '3',
-                icon: (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                ),
-                title: 'Order your favourites',
-                desc: 'Choose your dishes and place your order with ease.',
-              },
+              { emoji: '🏪', num: '1', title: 'Pick a Restaurant', desc: 'Browse our curated list of local restaurants and cafés.' },
+              { emoji: '📋', num: '2', title: 'Browse the Menu', desc: 'Explore beautiful digital menus with categories, prices & more.' },
+              { emoji: '📲', num: '3', title: 'Order or Visit', desc: 'Plan your order or walk-in — the choice is yours.' },
             ].map((step, i, arr) => (
-              <div className="vm__hiw-col" key={i}>
-                <div className="vm__step">
-                  <div className="vm__step-circle">
-                    <span className="vm__step-num">{step.num}</span>
-                    {step.icon}
+              <>
+                <div className="hiw__step" key={step.num} id={`hiw-step-${step.num}`}>
+                  <div className="hiw__step-icon">
+                    {step.emoji}
+                    <span className="hiw__step-num">{step.num}</span>
                   </div>
-                  <h3>{step.title}</h3>
-                  <p>{step.desc}</p>
+                  <div className="hiw__step-title">{step.title}</div>
+                  <p className="hiw__step-desc">{step.desc}</p>
                 </div>
-                {i < arr.length - 1 && <div className="vm__step-connector"><div className="vm__step-dots"></div></div>}
-              </div>
+                {i < arr.length - 1 && <div className="hiw__connector" key={`conn-${i}`} />}
+              </>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Digital Experience Banner ── */}
-      <section className="vm__banner-section">
-        <div className="vm__container">
-          <div className="vm__banner">
-            <div className="vm__banner-left">
-              <h2>
-                Turn your paper menu into<br/>
-                <span>a premium digital experience</span>
-              </h2>
-              <div className="vm__banner-feats">
-                {[
-                  {icon:'📱', title:'Mobile Friendly', desc:'Looks perfect on every device.'},
-                  {icon:'✏️', title:'Easy updates', desc:'Update menu & prices in real time.'},
-                  {icon:'📲', title:'Shareable QR code', desc:'Let customers access your menu instantly.'},
-                ].map((f,i) => (
-                  <div className="vm__banner-feat" key={i}>
-                    <div className="vm__banner-feat-icon">{f.icon}</div>
-                    <div>
-                      <div className="vm__banner-feat-title">{f.title}</div>
-                      <div className="vm__banner-feat-desc">{f.desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <a href="#" className="vm__btn vm__btn--primary vm__btn--lg">
-                Get Started with Veerexa
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      {/* ── Promo Banner ── */}
+      <div className="section" style={{ paddingTop: '16px' }}>
+        <div className="promo-banner" id="promo-banner">
+          <div className="promo-banner__left">
+            <div className="promo-banner__tag">
+              <span>🚀</span> For Restaurant Owners
+            </div>
+            <h2 className="promo-banner__h2">
+              Turn your paper menu into<br />a premium digital experience
+            </h2>
+            <p className="promo-banner__desc">
+              Get your own Veerexa Menu page — share it with customers via QR code, WhatsApp, or link. Always up to date.
+            </p>
+            <div className="promo-banner__feats">
+              {[
+                { emoji: '📱', label: 'Mobile-first design' },
+                { emoji: '✏️', label: 'Real-time updates' },
+                { emoji: '📲', label: 'Shareable QR code' },
+              ].map((f) => (
+                <div className="promo-banner__feat" key={f.label}>
+                  <div className="promo-banner__feat-icon">{f.emoji}</div>
+                  {f.label}
+                </div>
+              ))}
+            </div>
+            <a href="mailto:hello@veerexa.com" className="promo-banner__btn" id="promo-cta">
+              Get Started — It's Free
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <div className="promo-banner__right">🍽️</div>
+        </div>
+      </div>
+
+      {/* ── Footer ── */}
+      <footer className="site-footer" id="site-footer">
+        <div className="site-footer__inner">
+
+          {/* Brand */}
+          <div className="site-footer__col">
+            <div className="site-footer__logo">🍽️ Veerexa<span>Menu</span></div>
+            <p className="site-footer__about">
+              Indore ke best restaurants ke menus ek jagah — explore karo, discover karo, enjoy karo.
+            </p>
+            <div className="site-footer__socials">
+              <a href="mailto:veerexa0@gmail.com" className="site-footer__social-btn" id="footer-email-icon" title="Email us">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </a>
+              <a href="tel:+918264216929" className="site-footer__social-btn" id="footer-phone-icon" title="Call us">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
               </a>
             </div>
-            <div className="vm__banner-right">
-              <div className="vm__qr-card">
-                <div className="vm__qr-label">SCAN TO VIEW<br/>OUR MENU</div>
-                <div className="vm__qr-code">
-                  {/* SVG QR pattern */}
-                  <svg viewBox="0 0 100 100" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
-                    {/* Top-left finder */}
-                    <rect x="5" y="5" width="30" height="30" fill="none" stroke="#000" strokeWidth="4"/>
-                    <rect x="12" y="12" width="16" height="16" fill="#000"/>
-                    {/* Top-right finder */}
-                    <rect x="65" y="5" width="30" height="30" fill="none" stroke="#000" strokeWidth="4"/>
-                    <rect x="72" y="12" width="16" height="16" fill="#000"/>
-                    {/* Bottom-left finder */}
-                    <rect x="5" y="65" width="30" height="30" fill="none" stroke="#000" strokeWidth="4"/>
-                    <rect x="12" y="72" width="16" height="16" fill="#000"/>
-                    {/* Data modules */}
-                    <rect x="40" y="5" width="6" height="6" fill="#000"/>
-                    <rect x="50" y="5" width="6" height="6" fill="#000"/>
-                    <rect x="40" y="15" width="6" height="6" fill="#000"/>
-                    <rect x="40" y="25" width="6" height="6" fill="#000"/>
-                    <rect x="50" y="25" width="6" height="6" fill="#000"/>
-                    <rect x="60" y="15" width="6" height="6" fill="#000"/>
-                    <rect x="5" y="40" width="6" height="6" fill="#000"/>
-                    <rect x="15" y="40" width="6" height="6" fill="#000"/>
-                    <rect x="25" y="50" width="6" height="6" fill="#000"/>
-                    <rect x="40" y="40" width="6" height="6" fill="#000"/>
-                    <rect x="50" y="40" width="6" height="6" fill="#000"/>
-                    <rect x="60" y="40" width="6" height="6" fill="#000"/>
-                    <rect x="70" y="40" width="6" height="6" fill="#000"/>
-                    <rect x="80" y="40" width="6" height="6" fill="#000"/>
-                    <rect x="90" y="40" width="6" height="6" fill="#000"/>
-                    <rect x="40" y="50" width="6" height="6" fill="#000"/>
-                    <rect x="60" y="50" width="6" height="6" fill="#000"/>
-                    <rect x="80" y="50" width="6" height="6" fill="#000"/>
-                    <rect x="40" y="60" width="6" height="6" fill="#000"/>
-                    <rect x="50" y="60" width="6" height="6" fill="#000"/>
-                    <rect x="70" y="60" width="6" height="6" fill="#000"/>
-                    <rect x="90" y="60" width="6" height="6" fill="#000"/>
-                    <rect x="40" y="70" width="6" height="6" fill="#000"/>
-                    <rect x="60" y="70" width="6" height="6" fill="#000"/>
-                    <rect x="80" y="70" width="6" height="6" fill="#000"/>
-                    <rect x="40" y="80" width="6" height="6" fill="#000"/>
-                    <rect x="50" y="80" width="6" height="6" fill="#000"/>
-                    <rect x="60" y="80" width="6" height="6" fill="#000"/>
-                    <rect x="80" y="80" width="6" height="6" fill="#000"/>
-                    <rect x="90" y="80" width="6" height="6" fill="#000"/>
-                    <rect x="40" y="90" width="6" height="6" fill="#000"/>
-                    <rect x="70" y="90" width="6" height="6" fill="#000"/>
-                    <rect x="90" y="90" width="6" height="6" fill="#000"/>
-                  </svg>
-                </div>
-                <div className="vm__qr-brand">
-                  <span>🍽️</span> Veerexa Menu
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* ── Footer Cards ── */}
-      <section id="about" className="vm__about-section">
-        <div className="vm__container vm__about-grid">
-          {/* Built by Veerexa */}
-          <div className="vm__about-card">
-            <div className="vm__about-icon-wrap">
-              <svg width="52" height="52" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="48" fill="none" stroke="#f97316" strokeWidth="3"/>
-                <text x="50" y="65" textAnchor="middle" fontSize="38" fill="#f97316">🏛️</text>
-              </svg>
-            </div>
-            <div>
-              <h3 className="vm__about-title">Built by <span>Veerexa</span></h3>
-              <p className="vm__about-desc">We build simple, reliable digital products that help local businesses grow online.</p>
-            </div>
+          {/* Quick Links */}
+          <div className="site-footer__col">
+            <div className="site-footer__col-title">Quick Links</div>
+            <ul className="site-footer__list">
+              <li><a href="#explore" id="footer-explore">🍽️ Restaurants</a></li>
+              <li><a href="#how-it-works" id="footer-hiw">📋 How It Works</a></li>
+              <li><a href="#" id="footer-privacy">🔒 Privacy Policy</a></li>
+              <li><a href="#" id="footer-terms">📄 Terms of Use</a></li>
+            </ul>
           </div>
 
           {/* Contact */}
-          <div className="vm__about-card vm__about-card--contact">
-            <div className="vm__about-contact-left">
-              <h3 className="vm__about-title">Let's build your<br/>restaurant menu</h3>
-              <div className="vm__about-contacts">
-                <div className="vm__contact-row">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                  veerexa.com
-                </div>
-                <div className="vm__contact-row">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                  hello@veerexa.com
-                </div>
-                <div className="vm__contact-row">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div className="site-footer__col">
+            <div className="site-footer__col-title">Contact Us</div>
+            <ul className="site-footer__list">
+              <li>
+                <a href="mailto:veerexa0@gmail.com" id="footer-contact-email" className="site-footer__contact-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                  veerexa0@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+918264216929" id="footer-contact-phone" className="site-footer__contact-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                  +91 82642 16929
+                </a>
+              </li>
+              <li>
+                <span className="site-footer__contact-link" style={{ cursor: 'default' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
                   Indore, Madhya Pradesh
-                </div>
-              </div>
-            </div>
-            <div className="vm__about-food-img">
-              <img src="/images/fat-tiger.jpg" alt="restaurant ambiance" />
-            </div>
+                </span>
+              </li>
+            </ul>
           </div>
-        </div>
-      </section>
 
-      {/* ── Footer ── */}
-      <footer className="vm__footer">
-        <div className="vm__container vm__footer-inner">
-          <Link to="/" className="vm__footer-logo">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{color:'var(--vm-orange)'}}>
-              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
-              <path d="M12 8c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"/>
-            </svg>
-            Veerexa<span>Menu</span>
-          </Link>
-          <div className="vm__footer-copy">© 2026 Veerexa. All rights reserved.</div>
-          <div className="vm__footer-links">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Contact</a>
-          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="site-footer__bottom" id="footer-bottom">
+          <span>© 2026 Veerexa. Crafted with ❤️ in Indore.</span>
+          <span>All rights reserved.</span>
         </div>
       </footer>
-
     </div>
   )
 }
