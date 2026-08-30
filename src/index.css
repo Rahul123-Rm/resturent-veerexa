@@ -1442,7 +1442,7 @@ img { display: block; max-width: 100%; }
 .menu-item__price {
   font-size: 15px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--primary);
 }
 
 .menu-item__price--split {
@@ -1455,6 +1455,13 @@ img { display: block; max-width: 100%; }
 .price-full { font-weight: 700; color: var(--text-primary); }
 .price-half { font-weight: 500; color: var(--text-muted); font-size: 13px; }
 .price-sep  { color: var(--border); }
+
+/* ── Orange price on mobile ── */
+.menu-item__price {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+}
 
 /* ── Menu Item Image Block ── */
 .menu-item__img-wrap {
@@ -1713,130 +1720,149 @@ img { display: block; max-width: 100%; }
 
   /* ── MENU PAGE MOBILE FIX ── */
 
-  /* Cover image: taller and full-bleed */
+  /* Cover image */
   .menu-hero__cover { height: 200px; }
 
-  /* Restaurant info section: bigger, more padded */
-  .menu-hero__info {
-    padding: 18px 16px 14px;
-  }
+  /* Restaurant info: good padding */
+  .menu-hero__info { padding: 20px 16px 16px; }
 
-  /* Restaurant name: bigger on mobile */
+  /* Restaurant name: BIG */
   .menu-hero__name {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 800;
     margin-bottom: 6px;
+    line-height: 1.2;
   }
 
-  /* Tagline */
+  /* Tagline: readable */
   .menu-hero__tagline {
-    font-size: 14px;
-    margin-bottom: 12px;
+    font-size: 15px;
+    margin-bottom: 14px;
+    color: #636366;
   }
 
-  /* Chips: bigger, more tap-friendly */
+  /* Info chips: bigger tap targets */
   .menu-hero__chips { gap: 8px; flex-wrap: wrap; }
   .menu-hero__chip {
-    font-size: 12.5px;
-    padding: 6px 12px;
+    font-size: 14px;
+    padding: 8px 14px;
   }
 
   /* Filter zone */
-  .mfilter-zone { padding: 12px 14px 0; gap: 10px; }
+  .mfilter-zone { padding: 14px 14px 0; gap: 12px; }
 
-  /* Search bar: full width, bigger */
+  /* Search bar */
   .msearch__bar {
-    padding: 13px 16px;
+    padding: 14px 16px;
     border-radius: 12px;
   }
-  .msearch__input { font-size: 15px; }
+  .msearch__icon { font-size: 20px; }
+  .msearch__input { font-size: 16px; }
 
-  /* Filter chips */
-  .mfilter-chips { gap: 7px; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
+  /* Filter chips: horizontal scroll, bigger */
+  .mfilter-chips { gap: 8px; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
   .mfilter-chips::-webkit-scrollbar { display: none; }
-  .mfilter-chip { padding: 7px 14px; font-size: 13px; white-space: nowrap; flex-shrink: 0; }
+  .mfilter-chip { padding: 9px 16px; font-size: 14px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
 
-  /* Category nav tabs: sticky, bigger */
-  .mcat-nav {
-    top: 0;
-    z-index: 100;
-  }
+  /* Category nav tabs: BIG */
+  .mcat-nav { top: 0; z-index: 100; }
   .mcat-nav__list { padding: 0 14px; gap: 0; }
   .mcat-nav__btn {
-    font-size: 13.5px;
-    padding: 13px 14px;
+    font-size: 15px;
+    padding: 14px 16px;
     font-weight: 600;
   }
 
-  /* Menu layout: no padding */
+  /* Menu layout */
   .menu-layout { padding: 0; gap: 0; }
   .menu-content { padding: 0; }
 
-  /* Menu sections padding */
-  .menu-sections { padding: 0 14px; gap: 0; }
+  /* Menu sections */
+  .menu-sections { padding: 0 12px; gap: 0; }
 
-  /* Section title: big and bold */
+  /* Section title: BIG & BOLD */
   .menu-section {
     padding: 22px 0 12px;
     scroll-margin-top: 54px;
+    border-bottom: none;
   }
   .menu-section__title {
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 800;
   }
   .menu-section__count {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 14px;
   }
+  .menu-section__note {
+    font-size: 14px;
+  }
 
-  /* Menu list: single column */
+  /* Menu list: single column with gap */
   .menu-list {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 12px;
   }
 
-  /* Menu item: Zomato/Thalii style — full width row */
+  /* Menu item: white card, rounded, shadow */
   .menu-item {
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom: 1px solid var(--border-light);
-    padding: 16px 0;
-    gap: 14px;
-    box-shadow: none;
+    background: #ffffff;
+    border: 1px solid #e5e5ea;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 16px;
+    gap: 16px;
+    align-items: center;
     transform: none !important;
   }
-  .menu-item:last-child { border-bottom: none; }
 
-  /* Item image: bigger thumbnail */
+  /* Item image: RIGHT side, bigger */
   .menu-item__img-wrap {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     border-radius: 12px;
     flex-shrink: 0;
+    order: 2;
   }
-  .menu-item__img-placeholder { font-size: 32px; }
+  .menu-item__content { order: 1; flex: 1; }
+  .menu-item__img-placeholder { font-size: 38px; }
 
-  /* Item name: readable size */
+  /* Veg/Non-veg dot: bigger */
+  .diet-dot {
+    width: 17px;
+    height: 17px;
+  }
+  .diet-dot__inner { width: 8px; height: 8px; }
+
+  /* Item name: BIG */
   .menu-item__name {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
-    line-height: 1.35;
+    line-height: 1.3;
+    color: #1c1c1e;
   }
 
-  /* Price: prominent */
-  .menu-item__price {
-    font-size: 15px;
-    font-weight: 700;
+  /* Badges */
+  .stamp {
+    font-size: 12px;
+    padding: 3px 10px;
   }
-  .price-full { font-size: 15px; }
-  .price-half { font-size: 13px; }
+
+  /* Price: BIG ORANGE */
+  .menu-item__price {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--primary);
+  }
+  .price-full { font-size: 17px; font-weight: 700; color: var(--primary); }
+  .price-half { font-size: 14px; font-weight: 500; color: #636366; }
 
   /* Description */
   .menu-item__desc {
-    font-size: 13px;
+    font-size: 13.5px;
+    line-height: 1.5;
     -webkit-line-clamp: 2;
+    color: #636366;
   }
 }
 
